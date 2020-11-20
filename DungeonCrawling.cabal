@@ -1,0 +1,102 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 6e43744784e07574395e681a18dbe85d21db68b874fbf91cec16a11de77c5b6e
+
+name:           DungeonCrawling
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/hernoufM/DungeonCrawling#readme>
+homepage:       https://github.com/hernoufM/DungeonCrawling#readme
+bug-reports:    https://github.com/hernoufM/DungeonCrawling/issues
+author:         Hernouf Mohamed
+maintainer:     hernouf@yandex.ru
+copyright:      2020 Hernouf Mohamed
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/hernoufM/DungeonCrawling
+
+library
+  exposed-modules:
+      Carte
+      Entite
+      Environnement
+      Etat
+      Events
+      Generators
+      Graphics
+      Keyboard
+      Modele
+      PowerUp
+      TextureMap
+  other-modules:
+      Paths_DungeonCrawling
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , random
+    , sdl2
+    , sdl2-image
+    , text
+  default-language: Haskell2010
+
+executable DungeonCrawling-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_DungeonCrawling
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      DungeonCrawling
+    , QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , random
+    , sdl2
+    , sdl2-image
+    , text
+  default-language: Haskell2010
+
+test-suite DungeonCrawling-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      CarteQuickCheckSpec
+      CarteSpec
+      EntiteSpec
+      EnvironnementSpec
+      EtatSpec
+      EventsSpec
+      GeneratorsSpec
+      ModeleSpec
+      PowerUpSpec
+      Paths_DungeonCrawling
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      DungeonCrawling
+    , QuickCheck
+    , base >=4.7 && <5
+    , containers
+    , hspec
+    , random
+    , sdl2
+    , sdl2-image
+    , text
+  default-language: Haskell2010

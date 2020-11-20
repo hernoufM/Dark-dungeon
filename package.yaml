@@ -1,0 +1,54 @@
+name:                DungeonCrawling
+version:             0.1.0.0
+github:              "hernoufM/DungeonCrawling"
+license:             BSD3
+author:              "Hernouf Mohamed"
+maintainer:          "hernouf@yandex.ru"
+copyright:           "2020 Hernouf Mohamed"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/hernoufM/DungeonCrawling#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- text
+- hspec
+- random
+- sdl2
+- sdl2-image
+- QuickCheck
+library:
+  source-dirs: src
+
+executables:
+  DungeonCrawling-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - DungeonCrawling
+
+tests:
+  DungeonCrawling-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - DungeonCrawling
